@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 
 public class CentroVacuna {
     static final Logger logger = Logger.getLogger(CentroVacuna.class.getName());
-    Map<String, Integer> nombre= new HashMap<String, Integer>();
+    Map<String, Integer> nombre= new HashMap<>();
     private boolean estado; // false de baja / true de alta
     //Si se da de alta entonces podrá empezar a notificar automáticamente la  información de las personas que va vacunando.
     private String avance;
@@ -52,6 +52,35 @@ public class CentroVacuna {
 
     public void setEstado(boolean estado) {
         this.estado = estado;
+    }
+
+    public void Porcentaje (){
+        String cal="";
+        cal = ("Introduce tu el rango edad para el %");
+
+        if(cal==null)
+                logger.info("No ingreso un rango valido");
+        else{
+            int calif=Integer.parseInt(cal);
+            //Aqui se tomo el rango de 18 a 29 hasta 30 a 39, como indica la pregunta
+            if(calif>=18&&calif<=39)
+                logger.info("49.42%");
+            else
+            if(calif>=40&&calif<=49)
+                logger.info("18.24%");
+            else
+            if(calif>=50&&calif<=59)
+                logger.info("14.29%");
+            else
+            if(calif>=60&&calif<=69)
+                logger.info("9.68%");
+            else
+            if(calif<70&&calif>=79)
+                logger.info("5.55%");
+            else
+                //Mayores de 80
+                logger.info("2.82%");
+        }
     }
 
 

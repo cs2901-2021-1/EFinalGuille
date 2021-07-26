@@ -1,6 +1,5 @@
 package com.e1finalguille.examen.entity;
 
-import com.e1finalguille.examen.controller.AuthorizationController;
 
 import java.util.logging.Logger;
 
