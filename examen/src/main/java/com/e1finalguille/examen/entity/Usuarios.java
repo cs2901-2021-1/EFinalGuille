@@ -2,7 +2,11 @@ package com.e1finalguille.examen.entity;
 
 import com.e1finalguille.examen.controller.AuthorizationController;
 
+import java.util.logging.Logger;
+
 public class Usuarios {
+    static final Logger logger = Logger.getLogger(Usuarios.class.getName());
+
 
     private String username;
     private String password;
@@ -22,24 +26,24 @@ public class Usuarios {
         return password;
     }
 
-    public void setPassword(String username) {
-        String inv = "";
-        for (int i = username.length() - 1; i >= 0; i--) {
-            inv += username.charAt(i);
-        }
-        this.password = inv;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public void chagestatusofcentre(boolean valor,CentroVacuna CV){
+    public Usuarios(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+    public void chagestatusofcentre(boolean valor, CentroVacuna CV){
         CV.setEstado(valor);
         notificar(CV);
     }
-
-    public String isLogeado() {
-        return AuthorizationController.getSingleton().login(username,password);
+    public void notificar(CentroVacuna CV){
+        logger.info("Una persona se vacuno en el centro de vacunacion con nombre:" + CV.getNombre());
     }
 
 
+/*
     public void notificar(CentroVacuna CV)
     {
         if (CV.isEstado())
@@ -47,7 +51,7 @@ public class Usuarios {
             int random = (int)Math.floor(Math.random() * CV.getNombre());
             Logger.getLogger("Estamos vacunando a " + x[random]);
         }
-
+*/
 
 
 

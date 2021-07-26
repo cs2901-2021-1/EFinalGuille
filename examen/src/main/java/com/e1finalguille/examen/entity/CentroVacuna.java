@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 public class CentroVacuna {
+    static final Logger logger = Logger.getLogger(CentroVacuna.class.getName());
     Map<String, Integer> nombre= new HashMap<String, Integer>();
     private boolean estado; // false de baja / true de alta
     //Si se da de alta entonces podrá empezar a notificar automáticamente la  información de las personas que va vacunando.
@@ -52,6 +53,10 @@ public class CentroVacuna {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
+
+
+
+
 
 
 
