@@ -1,6 +1,5 @@
 package com.e1finalguille.examen.controller;
 
-import com.e1finalguille.examen.entity.CentroVacuna;
 import com.e1finalguille.examen.entity.Usuarios;
 
 import java.util.List;
