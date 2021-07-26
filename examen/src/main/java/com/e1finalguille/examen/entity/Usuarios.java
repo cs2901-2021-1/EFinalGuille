@@ -33,24 +33,15 @@ public class Usuarios {
         this.username = username;
         this.password = password;
     }
-    public void chagestatusofcentre(boolean valor, CentroVacuna CV){
-        CV.setEstado(valor);
-        notificar(CV);
+    public void chagestatusofcentre(boolean valor, CentroVacuna cv){
+        cv.setEstado(valor);
+        notificar(cv);
     }
-    public void notificar(CentroVacuna CV){
-        logger.info("Una persona se vacuno en el centro de vacunacion con nombre:" + CV.getNombre());
+    public void notificar(CentroVacuna cv){
+        logger.info("Una persona se vacuno en el centro de vacunacion con nombre:" + cv.getNombre());
     }
 
 
-/*
-    public void notificar(CentroVacuna CV)
-    {
-        if (CV.isEstado())
-        {
-            int random = (int)Math.floor(Math.random() * CV.getNombre());
-            Logger.getLogger("Estamos vacunando a " + x[random]);
-        }
-*/
 
 
 
